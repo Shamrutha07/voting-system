@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="voting.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Online Voting System</h1>
+        <div id="forms">
+            <div id="login-form" class="form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username">
+                <input type="password" id="login-password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <span onclick="showRegister()">Register</span></p>
+            </div>
+            <div id="register-form" class="form" style="display:none;">
+                <h2>Register</h2>
+                <input type="text" id="register-username" placeholder="Username">
+                <input type="password" id="register-password" placeholder="Password">
+                <button onclick="register()">Register</button>
+                <p>Already have an account? <span onclick="showLogin()">Login</span></p>
+            </div>
+        </div>
+
+        <div id="voting" style="display: none;">
+            <h2>Vote for Your Candidate</h2>
+            <div class="candidate" onclick="vote('Candidate A')">
+                <img src="https://sec.py.gov.in/sites/default/files/violin.png" alt="Candidate A Symbol" class="party-symbol">
+                <span>Social Democratic Party</span>
+            </div>
+            <div class="candidate" onclick="vote('Candidate B')">
+                <img src="https://sec.py.gov.in/sites/default/files/table.png" alt="Candidate B Symbol" class="party-symbol">
+                <span>National People's Party</span>
+            </div>
+            <div class="candidate" onclick="vote('Candidate C')">
+                <img src="https://sec.py.gov.in/sites/default/files/camera.png" alt="Candidate C Symbol" class="party-symbol">
+                <span>United Democraric Party</span>
+            </div>
+        </div>
+        
+        <div id="results" style="display: none;">
+            <h2>Voting Results</h2>
+            <canvas id="result-chart" width="400" height="400"></canvas>
+        </div>        
+        <div id="results" style="display:none;">
+            <h2>Results</h2>
+            <canvas id="result-chart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="voting.js"></script>
+</body>
+</html>
